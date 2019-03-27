@@ -11,30 +11,33 @@
      limitations under the License.
 -->
 <!-- Layout for a single list item -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/list_item_height"
     android:background="@color/tan_background"
     android:minHeight="@dimen/list_item_height"
-    android:orientation="horizontal">
+    >
 
     <ImageView
         android:id="@+id/list_item_icon"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/image"
         android:paddingLeft="16dp">
 
         <TextView
             android:id="@+id/miwokTextView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="44dp"
             android:layout_weight="1"
             android:gravity="bottom"
             android:textAppearance="?android:textAppearanceMedium"
@@ -46,11 +49,25 @@
         <TextView
             android:id="@+id/defaultTextView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+
+            android:layout_height="44dp"
+            android:layout_below="@id/miwokTextView"
             android:layout_weight="1"
             android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             tools:text="one" />
-    </LinearLayout>
-</LinearLayout>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/baseline_play_arrow_white_18"></ImageView>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"/>
+
+</RelativeLayout>
